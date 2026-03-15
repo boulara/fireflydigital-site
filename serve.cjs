@@ -17,8 +17,9 @@ const MIME = {
 };
 
 http.createServer((req, res) => {
-  let p = path.join(DIST, req.url === "/" ? "/index.html" : req.url);
-  if (!fs.existsSync(p)) p = path.join(DIST, req.url.replace(/\/$/, ""), "index.html");
+  const url = req.url.split("?")[0];
+  let p = path.join(DIST, url === "/" ? "/index.html" : url);
+  if (!fs.existsSync(p) || fs.statSync(p).isDirectory()) p = path.join(DIST, url.replace(/\/$/, ""), "index.html");
   if (!fs.existsSync(p)) p = path.join(DIST, "404.html");
   if (!fs.existsSync(p)) { res.writeHead(404); return res.end("Not found"); }
   const ext = path.extname(p);
