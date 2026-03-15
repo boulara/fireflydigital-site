@@ -1,0 +1,750 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Firefly Digital — Healthcare Workflow Intelligence">
+  <Nav current="/" />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="grid-lines"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Now live · Conduit v2.5
+        </div>
+        <h1>Where Healthcare<br />Teams Move<br /><em>as One.</em></h1>
+        <p class="hero-sub">
+          Conduit connects your clinical and operational teams on a single,
+          real-time platform — eliminating communication gaps, accelerating
+          patient access, and keeping every case on track.
+        </p>
+        <div class="hero-ctas">
+          <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="btn-primary">
+            Request a Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="/product" class="btn-ghost">See the Product</a>
+        </div>
+        <div class="trust-row">
+          <span class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            HIPAA-Compliant
+          </span>
+          <span class="trust-dot">·</span>
+          <span class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+            Built in New Hampshire
+          </span>
+          <span class="trust-dot">·</span>
+          <span class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Real-Time Updates
+          </span>
+        </div>
+      </div>
+
+      <!-- APP MOCKUP -->
+      <div class="hero-mock">
+        <div class="browser">
+          <div class="browser-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="address">conduit.fireflydigital.biz</div>
+          </div>
+          <div class="browser-content">
+            <!-- Conduit Nav -->
+            <div class="app-nav">
+              <div class="app-logo">
+                <svg viewBox="-128 -52 256 100" height="18" style="display:block">
+                  <path d="M-108,14 C-80,14 -68,-28 -36,-28 C-4,-28 4,28 36,28 C68,28 80,-10 108,-10" stroke="#14B8A6" stroke-width="2.5" fill="none" opacity="0.6"/>
+                  <circle cx="-108" cy="14" r="16" fill="#14B8A6" fill-opacity="0.15" stroke="#14B8A6" stroke-width="2"/>
+                  <circle cx="108" cy="-10" r="16" fill="#14B8A6" fill-opacity="0.05" stroke="#14B8A6" stroke-width="1.5" stroke-opacity="0.4"/>
+                </svg>
+                <span style="color:#14B8A6;font-weight:700;font-size:11px;letter-spacing:-0.3px">Conduit</span>
+              </div>
+              <div class="app-nav-links">
+                <span class="nav-link active-nav">Dashboard</span>
+                <span class="nav-link">Analytics</span>
+                <span class="nav-link">Inbox</span>
+                <span class="nav-link">Settings</span>
+              </div>
+              <div class="app-avatar">JF</div>
+            </div>
+            <!-- Table -->
+            <div class="app-table">
+              <div class="table-head">
+                <span>Prescriber</span>
+                <span>Territory</span>
+                <span>SP Partner</span>
+                <span>HUB Status</span>
+                <span>Channel</span>
+                <span>Aging</span>
+              </div>
+              {[
+                { name:"Dr. Sarah Chen",   terr:"Northeast",  sp:"Shields Health",   hub:"Pending Auth",   ch:"Specialty",  age:3,  color:"#2ecc71" },
+                { name:"Dr. Mark Torres",  terr:"Southeast",  sp:"CVS Specialty",    hub:"In Review",      ch:"Retail",     age:12, color:"#f0a500" },
+                { name:"Dr. Lisa Patel",   terr:"Midwest",    hub:"Escalation",      sp:"Diplomat Phcy",  ch:"Mail Order", age:24, color:"#e74c3c" },
+                { name:"Dr. James Wright", terr:"Southwest",  sp:"Shields Health",   hub:"Benefits Inv",  ch:"Specialty",  age:7,  color:"#2ecc71" },
+                { name:"Dr. Amy Rodriguez",terr:"West",       sp:"Accredo",          hub:"Pending Auth",  ch:"Specialty",  age:18, color:"#f0a500" },
+              ].map(r => (
+                <div class="table-row">
+                  <span class="cell-name">{r.name}</span>
+                  <span class="cell-muted">{r.terr}</span>
+                  <span class="cell-muted">{r.sp || "—"}</span>
+                  <span class="cell-muted" style="font-size:9px">{r.hub}</span>
+                  <span class="cell-muted">{r.ch}</span>
+                  <span class="aging-badge" style={`background:${r.color}22;color:${r.color};border:1px solid ${r.color}44`}>{r.age}d</span>
+                </div>
+              ))}
+            </div>
+            <!-- Notif overlay card -->
+            <div class="notif-card">
+              <div class="notif-header">
+                <span class="team-badge ncm">NCM</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <span class="team-badge sp">SP</span>
+                <span class="notif-priority urgent">Urgent</span>
+              </div>
+              <div class="notif-text">Prior auth expires in 48hrs — please confirm shipment date for Dr. Chen's patient.</div>
+              <div class="notif-footer">
+                <span>Morgan H. · 2m ago</span>
+                <button class="ack-btn">Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating stat cards -->
+        <div class="stat-card stat-1">
+          <div class="stat-val teal">98%</div>
+          <div class="stat-lbl">On-Time Shipment</div>
+        </div>
+        <div class="stat-card stat-2">
+          <div class="stat-val amber">4 Teams</div>
+          <div class="stat-lbl">One Platform</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="inner">
+      {[
+        { val:"4",    label:"Integrated care teams",       color:"var(--amber)" },
+        { val:"< 2m", label:"Average notification response",color:"var(--teal)"  },
+        { val:"100%", label:"Web-based, zero installs",     color:"var(--amber)" },
+        { val:"24/7", label:"Real-time case visibility",    color:"var(--teal)"  },
+      ].map(s => (
+        <div class="stat">
+          <div class="stat-number" style={`color:${s.color}`}>{s.val}</div>
+          <div class="stat-desc">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="inner">
+      <div class="section-label">What We Built</div>
+      <h2>Everything your team needs.<br />Nothing they don't.</h2>
+      <p class="section-sub">Conduit was designed from the ground up for patient access teams — not adapted from a generic CRM or ticketing tool.</p>
+
+      <div class="feat-grid">
+        {[
+          {
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+            title: "Real-Time Team Notifications",
+            desc: "Route messages between Home Office, NCM, SP, and Sales with one click. Priority escalation, reply threads, and acknowledgment tracking built in.",
+            accent: "var(--amber)",
+          },
+          {
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+            title: "Live Case Analytics",
+            desc: "Aging distribution, consent rates, SP partner performance, channel breakdown, and days-to-first-ship — all on a single dashboard. Export or share with a link.",
+            accent: "var(--teal)",
+          },
+          {
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+            title: "Private Case Notes",
+            desc: "Every team member can log follow-up notes with date reminders. Overdue follow-ups surface automatically so nothing falls through the cracks.",
+            accent: "var(--amber)",
+          },
+          {
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+            title: "Role-Based Access",
+            desc: "Partners see their queue. Managers see team performance. Admins see everything. HIPAA-compliant with audit logs, session timeouts, and secure auth.",
+            accent: "var(--teal)",
+          },
+          {
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+            title: "Zero-Install, Any Device",
+            desc: "Fully web-based. No app stores, no installs, no IT tickets. Works on any browser, desktop or mobile — so your team is never blocked.",
+            accent: "var(--amber)",
+          },
+          {
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>`,
+            title: "Shareable Reports",
+            desc: "Generate a secure, read-only analytics link to share with leadership or stakeholders — no login required, 7-day expiry, fully audited.",
+            accent: "var(--teal)",
+          },
+        ].map(f => (
+          <div class="feat-card" style={`--accent:${f.accent}`}>
+            <div class="feat-icon" set:html={f.icon} />
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYTICS SHOWCASE -->
+  <section class="showcase">
+    <div class="inner">
+      <div class="showcase-row">
+        <div class="showcase-text">
+          <div class="section-label">Case Analytics</div>
+          <h2>Analytics that actually tell you something.</h2>
+          <p>Know exactly where every patient stands. Conduit's analytics dashboard surfaces aging cases, consent gaps, SP partner performance, and regional breakdowns — all in real time.</p>
+          <ul class="check-list">
+            <li>Aging distribution with critical case alerts</li>
+            <li>Channel and payer breakdown (donut charts)</li>
+            <li>Days to first shipment tracking</li>
+            <li>SP partner performance comparison</li>
+            <li>Export to PDF or share a secure link</li>
+          </ul>
+          <a href="/product" class="btn-outline">Explore the Product →</a>
+        </div>
+        <div class="analytics-mock">
+          <div class="mock-header">
+            <span class="mock-title">Case Analytics</span>
+            <span class="mock-sub">26 patients · 4 regions · Live</span>
+          </div>
+          <div class="kpi-row">
+            {[
+              { val:"26",   lbl:"Total Patients", c:"#14B8A6" },
+              { val:"73%",  lbl:"Consent Rate",   c:"#F59E0B" },
+              { val:"8.4d", lbl:"Avg Aging",       c:"#2ecc71" },
+              { val:"62%",  lbl:"Resolution Rate", c:"#a78bfa" },
+            ].map(k => (
+              <div class="kpi">
+                <div class="kpi-val" style={`color:${k.c}`}>{k.val}</div>
+                <div class="kpi-lbl">{k.lbl}</div>
+              </div>
+            ))}
+          </div>
+          <div class="charts-row">
+            <!-- Donut chart SVG -->
+            <div class="chart-wrap">
+              <div class="chart-lbl">Channel Mix</div>
+              <svg viewBox="0 0 120 120" width="100" height="100">
+                <circle cx="60" cy="60" r="40" fill="none" stroke="#14B8A6" stroke-width="18" stroke-dasharray="100 151" stroke-dashoffset="25"/>
+                <circle cx="60" cy="60" r="40" fill="none" stroke="#F59E0B" stroke-width="18" stroke-dasharray="60 191" stroke-dashoffset="-75"/>
+                <circle cx="60" cy="60" r="40" fill="none" stroke="#a78bfa" stroke-width="18" stroke-dasharray="40 211" stroke-dashoffset="-135"/>
+                <circle cx="60" cy="60" r="40" fill="none" stroke="#f472b6" stroke-width="18" stroke-dasharray="30 221" stroke-dashoffset="-175"/>
+                <text x="60" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#F1F5F9" font-family="Inter, sans-serif">4</text>
+                <text x="60" y="68" text-anchor="middle" font-size="8" fill="#94A3B8" font-family="Inter, sans-serif">channels</text>
+              </svg>
+              <div class="legend">
+                {[["#14B8A6","Specialty"],["#F59E0B","Retail"],["#a78bfa","Mail Order"],["#f472b6","Other"]].map(([c,l]) => (
+                  <div class="legend-item"><span class="legend-dot" style={`background:${c}`}></span>{l}</div>
+                ))}
+              </div>
+            </div>
+            <!-- Bar chart -->
+            <div class="chart-wrap">
+              <div class="chart-lbl">Aging Distribution</div>
+              <div class="bars">
+                {[
+                  { label:"0–5d",   h:70, c:"#2ecc71" },
+                  { label:"6–10d",  h:45, c:"#27ae60" },
+                  { label:"11–15d", h:55, c:"#f0a500" },
+                  { label:"16–20d", h:30, c:"#e67e22" },
+                  { label:"21–30d", h:40, c:"#e74c3c" },
+                  { label:"30+d",   h:20, c:"#c0392b" },
+                ].map(b => (
+                  <div class="bar-col">
+                    <div class="bar" style={`height:${b.h}%;background:${b.c}`}></div>
+                    <div class="bar-lbl">{b.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INBOX SHOWCASE -->
+  <section class="showcase showcase-flip">
+    <div class="inner">
+      <div class="showcase-row">
+        <div class="inbox-mock">
+          {[
+            { from:"NCM", to:"SP",  priority:"urgent", name:"Dr. Lisa Patel",    msg:"Prior auth expires in 48hrs — confirm shipment.", time:"2m", status:"pending" },
+            { from:"SP",  to:"NCM", priority:"high",   name:"Dr. Mark Torres",   msg:"Benefits investigation complete. Ready to ship.", time:"14m",status:"replied" },
+            { from:"Home Office", to:"NCM", priority:"normal", name:"Dr. James Wright", msg:"New patient referral — please schedule intake call.",time:"1h", status:"pending" },
+          ].map((n, i) => (
+            <div class={`nc ${n.status}`}>
+              <div class="nc-head">
+                <span class={`tb ${n.from.toLowerCase().replace(' ','-')}`}>{n.from}</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <span class={`tb ${n.to.toLowerCase().replace(' ','-')}`}>{n.to}</span>
+                <span class={`pri ${n.priority}`}>{n.priority}</span>
+                <span class="nc-time">{n.time} ago</span>
+              </div>
+              <div class="nc-patient">{n.name}</div>
+              <div class="nc-msg">{n.msg}</div>
+              <div class="nc-actions">
+                {n.status === "pending"
+                  ? <><button class="nc-btn reply">Reply</button><button class="nc-btn ack">Acknowledge</button></>
+                  : <span class="nc-replied">✓ Replied</span>
+                }
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="showcase-text">
+          <div class="section-label">Team Inbox</div>
+          <h2>Zero-friction team communication.</h2>
+          <p>No more emails lost in inboxes. No more phone tag. Conduit routes notifications directly to the right team, with full thread history and priority escalation.</p>
+          <ul class="check-list">
+            <li>Normal, High, and Urgent priority levels</li>
+            <li>Reply threads with full message history</li>
+            <li>Acknowledgment tracking and timestamps</li>
+            <li>Inbox badge with unread counts</li>
+            <li>Toast notifications for new messages</li>
+          </ul>
+          <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="btn-primary">
+            Request a Demo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <div class="inner">
+      <div class="cta-box">
+        <div class="cta-glow"></div>
+        <div class="cta-inner">
+          <div class="section-label" style="color:var(--amber)">Get Started</div>
+          <h2>Ready to see Conduit in action?</h2>
+          <p>We'll walk you through the platform and show you how it can work for your team. No commitment, no pressure.</p>
+          <div class="cta-buttons">
+            <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="btn-primary btn-large">
+              Request a Product Demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="/about" class="btn-ghost">Learn About Us</a>
+          </div>
+          <p class="cta-note">Reach us directly at <a href="mailto:nicholas.milaro@outlook.com">nicholas.milaro@outlook.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+/* HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 140px 32px 100px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.glow { position: absolute; border-radius: 50%; filter: blur(80px); }
+.glow-1 { width: 500px; height: 500px; top: -100px; left: -100px; background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%); }
+.glow-2 { width: 600px; height: 600px; bottom: -150px; right: -150px; background: radial-gradient(circle, rgba(20,184,166,0.08) 0%, transparent 70%); }
+.grid-lines {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber-dim);
+  border: 1px solid var(--amber-border);
+  color: var(--amber-light);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  letter-spacing: 0.3px;
+}
+.badge-dot { width: 7px; height: 7px; background: var(--amber); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+
+h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--amber) 0%, var(--amber-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.hero-ctas { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; }
+
+.trust-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.trust-dot  { color: var(--faint); }
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: var(--amber);
+  color: #07101E;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: opacity 0.2s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-primary.btn-large { padding: 16px 32px; font-size: 15px; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 24px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid var(--border-2);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--border-2); background: rgba(255,255,255,0.04); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--amber);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--amber-border);
+  transition: border-color 0.2s;
+  margin-top: 8px;
+}
+.btn-outline:hover { border-color: var(--amber); }
+
+/* Browser mockup */
+.hero-mock { position: relative; }
+.browser {
+  background: var(--navy-2);
+  border: 1px solid var(--border-2);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+}
+.dots { display: flex; gap: 5px; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; }
+.dots span:nth-child(1) { background: #ff5f57; }
+.dots span:nth-child(2) { background: #febc2e; }
+.dots span:nth-child(3) { background: #28c840; }
+.address {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 12px;
+  font-size: 10px;
+  color: var(--faint);
+  font-family: monospace;
+}
+
+.browser-content { padding: 0; }
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 14px;
+  background: rgba(7,16,30,0.9);
+  border-bottom: 1px solid rgba(30,58,74,0.8);
+}
+.app-logo { display: flex; align-items: center; gap: 6px; }
+.app-nav-links { display: flex; gap: 2px; margin-left: auto; }
+.nav-link { font-size: 10px; color: #475569; padding: 4px 8px; border-radius: 5px; }
+.active-nav { color: #14B8A6; background: rgba(20,184,166,0.1); }
+.app-avatar { width: 22px; height: 22px; border-radius: 50%; background: #14B8A6; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: #0B1829; }
+
+.app-table { padding: 8px 0; }
+.table-head {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 1fr 1fr 0.8fr 0.5fr;
+  padding: 4px 14px;
+  gap: 6px;
+  font-size: 8px;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(30,58,74,0.5);
+  margin-bottom: 2px;
+}
+.table-row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 1fr 1fr 0.8fr 0.5fr;
+  padding: 6px 14px;
+  gap: 6px;
+  align-items: center;
+  border-bottom: 1px solid rgba(30,58,74,0.3);
+  font-size: 9.5px;
+  transition: background 0.15s;
+}
+.table-row:hover { background: rgba(20,184,166,0.04); }
+.cell-name { font-weight: 600; color: #F1F5F9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cell-muted { color: #475569; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.aging-badge { padding: 2px 6px; border-radius: 10px; font-size: 9px; font-weight: 700; text-align: center; }
+
+.notif-card {
+  margin: 8px 14px 12px;
+  background: rgba(20,184,166,0.06);
+  border: 1px solid rgba(20,184,166,0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 20px rgba(20,184,166,0.08);
+}
+.notif-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.team-badge { font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 10px; }
+.ncm { background: rgba(14,165,233,0.15); color: #38bdf8; }
+.sp  { background: rgba(46,204,113,0.15); color: #2ecc71; }
+.notif-priority { font-size: 8px; font-weight: 700; padding: 1px 6px; border-radius: 8px; }
+.urgent { background: rgba(231,76,60,0.15); color: #e74c3c; }
+.notif-text { font-size: 9px; color: #94A3B8; line-height: 1.5; margin-bottom: 8px; }
+.notif-footer { display: flex; justify-content: space-between; align-items: center; }
+.notif-footer > span { font-size: 8px; color: #334155; }
+.ack-btn { font-size: 8px; font-weight: 700; background: #14B8A6; color: #0B1829; border: none; border-radius: 5px; padding: 3px 10px; cursor: pointer; }
+
+/* Floating stat cards */
+.stat-card {
+  position: absolute;
+  background: var(--navy-3);
+  border: 1px solid var(--border-2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+.stat-1 { bottom: -20px; left: -40px; }
+.stat-2 { top: 30px; right: -30px; }
+.stat-val { font-size: 22px; font-weight: 800; letter-spacing: -1px; }
+.stat-val.teal   { color: var(--teal); }
+.stat-val.amber  { color: var(--amber); }
+.stat-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+/* STATS STRIP */
+.stats-strip {
+  padding: 48px 32px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--navy-2);
+  margin-top: 80px;
+}
+.stats-strip .inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.stat { text-align: center; }
+.stat-number { font-size: 42px; font-weight: 900; letter-spacing: -2px; line-height: 1; }
+.stat-desc { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+/* FEATURES */
+.features { padding: 100px 32px; }
+.inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+h2 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px; }
+.section-sub { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 56px; }
+
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.feat-card {
+  background: var(--navy-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.feat-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.feat-icon {
+  width: 44px; height: 44px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.feat-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.feat-card p  { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* SHOWCASE */
+.showcase { padding: 80px 32px; }
+.showcase-flip .showcase-row { direction: rtl; }
+.showcase-flip .showcase-row > * { direction: ltr; }
+.showcase-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.showcase-text p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.check-list li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13.5px; color: var(--muted);
+}
+.check-list li::before {
+  content: '';
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--teal-dim);
+  border: 1px solid rgba(20,184,166,0.3);
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2314B8A6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Analytics mock */
+.analytics-mock {
+  background: var(--navy-2);
+  border: 1px solid var(--border-2);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.mock-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+.mock-title { font-size: 15px; font-weight: 700; }
+.mock-sub   { font-size: 11px; color: var(--faint); }
+.kpi-row    { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 20px; }
+.kpi { background: var(--navy-3); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+.kpi-val { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+.kpi-lbl { font-size: 10px; color: var(--faint); margin-top: 2px; }
+.charts-row { display: flex; gap: 20px; align-items: flex-start; }
+.chart-wrap { flex: 1; }
+.chart-lbl  { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
+.legend { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--muted); }
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.bars { display: flex; align-items: flex-end; gap: 4px; height: 90px; }
+.bar-col { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; height: 100%; justify-content: flex-end; }
+.bar { width: 100%; border-radius: 3px 3px 0 0; min-height: 4px; transition: opacity 0.2s; }
+.bar-lbl { font-size: 7px; color: var(--faint); text-align: center; white-space: nowrap; }
+
+/* Inbox mock */
+.inbox-mock { display: flex; flex-direction: column; gap: 10px; }
+.nc { background: var(--navy-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.nc.pending { border-color: rgba(20,184,166,0.2); }
+.nc-head { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+.tb { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.tb.ncm         { background: rgba(14,165,233,0.15); color: #38bdf8; }
+.tb.sp          { background: rgba(46,204,113,0.15);  color: #2ecc71; }
+.tb.home-office { background: rgba(20,184,166,0.15);  color: #14B8A6; }
+.pri { font-size: 9px; font-weight: 700; padding: 1px 7px; border-radius: 8px; margin-left: 4px; }
+.pri.urgent { background: rgba(231,76,60,0.15);   color: #e74c3c; }
+.pri.high   { background: rgba(240,165,0,0.15);   color: #f0a500; }
+.pri.normal { background: rgba(100,116,139,0.15); color: #64748B; }
+.nc-time { margin-left: auto; font-size: 10px; color: var(--faint); }
+.nc-patient { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.nc-msg { font-size: 11.5px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+.nc-actions { display: flex; gap: 8px; align-items: center; }
+.nc-btn { font-size: 11px; font-weight: 700; border-radius: 6px; border: none; padding: 4px 12px; cursor: pointer; }
+.nc-btn.reply { background: rgba(20,184,166,0.15); color: #14B8A6; }
+.nc-btn.ack   { background: rgba(100,116,139,0.1); color: var(--muted); }
+.nc-replied   { font-size: 11px; color: #2ecc71; font-weight: 600; }
+
+/* CTA */
+.cta-section { padding: 80px 32px 0; }
+.cta-box { position: relative; background: var(--navy-2); border: 1px solid var(--amber-border); border-radius: 20px; overflow: hidden; }
+.cta-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.1) 0%, transparent 65%); pointer-events: none; }
+.cta-inner { position: relative; text-align: center; padding: 80px 40px; }
+.cta-inner h2 { margin-bottom: 16px; }
+.cta-inner p  { font-size: 16px; color: var(--muted); max-width: 480px; margin: 0 auto 36px; }
+.cta-buttons  { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.cta-note     { font-size: 12px; color: var(--faint); }
+.cta-note a   { color: var(--amber); border-bottom: 1px solid var(--amber-border); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-mock  { display: none; }
+  .stats-strip .inner { grid-template-columns: repeat(2,1fr); }
+  .feat-grid  { grid-template-columns: repeat(2,1fr); }
+  .showcase-row { grid-template-columns: 1fr; gap: 40px; }
+  .showcase-flip .showcase-row { direction: ltr; }
+}
+@media (max-width: 640px) {
+  .hero { padding: 120px 20px 60px; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .stats-strip .inner { grid-template-columns: repeat(2,1fr); }
+  .kpi-row { grid-template-columns: repeat(2,1fr); }
+}
+</style>

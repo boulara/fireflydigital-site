@@ -1,0 +1,151 @@
+---
+const { current = '' } = Astro.props;
+const links = [
+  { href: '/',        label: 'Home'    },
+  { href: '/product', label: 'Product' },
+  { href: '/about',   label: 'About'   },
+  { href: '/contact', label: 'Contact' },
+];
+---
+<nav>
+  <div class="inner">
+    <a href="/" class="logo" aria-label="Firefly Digital Home">
+      <svg class="mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="17" stroke="#F59E0B" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="18" cy="18" r="7" fill="#F59E0B" opacity="0.9"/>
+        <circle cx="18" cy="18" r="4" fill="#FCD34D"/>
+        <line x1="18" y1="2"  x2="18" y2="8"  stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="18" y1="28" x2="18" y2="34" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="2"  y1="18" x2="8"  y2="18" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="28" y1="18" x2="34" y2="18" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <div class="wordmark">
+        <span class="fd-name"><span class="accent">F</span>irefly <span class="accent">D</span>igital</span>
+        <span class="fd-sub">Software &amp; Analytics</span>
+      </div>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" hidden />
+    <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <ul class="links">
+      {links.map(l => (
+        <li>
+          <a href={l.href} class={current === l.href ? 'active' : ''}>{l.label}</a>
+        </li>
+      ))}
+      <li>
+        <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="cta-btn">
+          Request Demo
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(7,16,30,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .mark { width: 34px; height: 34px; filter: drop-shadow(0 0 8px rgba(245,158,11,0.5)); }
+
+  .wordmark { line-height: 1.15; }
+  .fd-name { display: block; font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
+  .fd-sub  { display: block; font-size: 9px; letter-spacing: 1.8px; color: var(--faint); text-transform: uppercase; }
+  .accent  { color: var(--amber); }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .links a {
+    display: block;
+    padding: 7px 14px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--muted);
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+  .links a.active { color: var(--amber); }
+
+  .cta-btn {
+    margin-left: 8px;
+    padding: 8px 18px !important;
+    background: var(--amber) !important;
+    color: #07101E !important;
+    font-weight: 700 !important;
+    border-radius: 8px;
+    transition: opacity 0.2s !important;
+  }
+  .cta-btn:hover { opacity: 0.88 !important; background: var(--amber) !important; }
+
+  .hamburger { display: none; }
+
+  @media (max-width: 720px) {
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--muted);
+      border-radius: 2px;
+      transition: 0.2s;
+    }
+
+    .links {
+      display: none;
+      position: absolute;
+      top: 68px; left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--navy-2);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px 16px;
+    }
+
+    #nav-toggle:checked ~ .links { display: flex; }
+
+    .links a { padding: 12px 16px; font-size: 15px; }
+    .cta-btn { margin-left: 0 !important; margin-top: 8px; text-align: center; }
+  }
+</style>

@@ -1,0 +1,807 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Conduit — Firefly Digital" description="Conduit is a HIPAA-compliant care coordination platform built for specialty pharmacy and hub operations teams.">
+  <Nav current="/product" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="inner">
+        <div class="eyebrow">Product</div>
+        <h1>Meet <span class="amber">Conduit</span></h1>
+        <p class="sub">A HIPAA-compliant workflow and notification platform purpose-built for care coordination teams — replacing the chaos of spreadsheets, emails, and Power Apps with a single intelligent workspace.</p>
+        <div class="hero-actions">
+          <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="btn-primary">Request a Demo</a>
+          <a href="https://conduit.fireflydigital.biz" target="_blank" rel="noopener" class="btn-ghost">Launch App ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard mockup -->
+    <section class="mockup-section">
+      <div class="inner">
+        <div class="browser">
+          <div class="browser-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="url-pill">conduit.fireflydigital.biz</div>
+            <div style="width:60px"></div>
+          </div>
+          <div class="browser-body">
+
+            <!-- App chrome -->
+            <div class="app-shell">
+
+              <!-- Sidebar -->
+              <div class="sidebar">
+                <div class="sb-logo">
+                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                    <circle cx="12" cy="12" r="11" stroke="#F59E0B" stroke-width="1.2" opacity="0.4"/>
+                    <circle cx="12" cy="12" r="5" fill="#F59E0B" opacity="0.85"/>
+                    <circle cx="12" cy="12" r="2.5" fill="#FCD34D"/>
+                  </svg>
+                  <span>Conduit</span>
+                </div>
+                <div class="sb-item active">📋 Patients</div>
+                <div class="sb-item">🔔 Inbox <span class="badge">3</span></div>
+                <div class="sb-item">📊 Analytics</div>
+                <div class="sb-item">⚙️ Settings</div>
+                <div class="sb-spacer"></div>
+                <div class="sb-user">
+                  <div class="sb-avatar">AM</div>
+                  <div>
+                    <div class="sb-uname">Amy Patel</div>
+                    <div class="sb-team">SP Team</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main area -->
+              <div class="main-area">
+                <div class="toolbar">
+                  <div class="search-box">🔍 Search patients...</div>
+                  <div class="filters">
+                    <span class="filter-pill active">All Regions</span>
+                    <span class="filter-pill">Northeast</span>
+                    <span class="filter-pill">Southeast</span>
+                  </div>
+                </div>
+
+                <!-- Table -->
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Patient</th>
+                        <th>Prescriber</th>
+                        <th>Status</th>
+                        <th>Aging</th>
+                        <th>Channel</th>
+                        <th>Notify</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="pt-name">J. Martinez</span></td>
+                        <td class="muted">Dr. Chen</td>
+                        <td><span class="status sp">SP Active</span></td>
+                        <td><span class="aging ok">12d</span></td>
+                        <td class="muted">Hub</td>
+                        <td><button class="notify-btn">Notify</button></td>
+                      </tr>
+                      <tr class="highlighted">
+                        <td><span class="pt-name">R. Thompson</span></td>
+                        <td class="muted">Dr. Williams</td>
+                        <td><span class="status ncm">NCM Review</span></td>
+                        <td><span class="aging warn">28d</span></td>
+                        <td class="muted">Retail</td>
+                        <td><button class="notify-btn">Notify</button></td>
+                      </tr>
+                      <tr>
+                        <td><span class="pt-name">S. Patel</span></td>
+                        <td class="muted">Dr. Lopez</td>
+                        <td><span class="status iss">ISS Hold</span></td>
+                        <td><span class="aging crit">45d</span></td>
+                        <td class="muted">Specialty</td>
+                        <td><button class="notify-btn">Notify</button></td>
+                      </tr>
+                      <tr>
+                        <td><span class="pt-name">K. Davis</span></td>
+                        <td class="muted">Dr. Kim</td>
+                        <td><span class="status sp">SP Active</span></td>
+                        <td><span class="aging ok">6d</span></td>
+                        <td class="muted">Hub</td>
+                        <td><button class="notify-btn">Notify</button></td>
+                      </tr>
+                      <tr>
+                        <td><span class="pt-name">M. Johnson</span></td>
+                        <td class="muted">Dr. Patel</td>
+                        <td><span class="status ho">HO Review</span></td>
+                        <td><span class="aging warn">19d</span></td>
+                        <td class="muted">Hub</td>
+                        <td><button class="notify-btn">Notify</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="caption">Live patient list with real-time status, aging indicators, and one-click notifications across teams.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="inner">
+        <div class="section-label">Core Features</div>
+        <h2>Everything your team needs.<br/>Nothing they don't.</h2>
+
+        <div class="feature-rows">
+
+          <div class="feat-row">
+            <div class="feat-text">
+              <div class="feat-num">01</div>
+              <h3>Unified Patient Workspace</h3>
+              <p>Every case in one place. Filter by region, channel, program, and status. See aging days, substatus, and prescriber at a glance — no pivot tables required.</p>
+              <ul>
+                <li>Real-time search across all patient fields</li>
+                <li>Color-coded aging indicators (0–14d, 15–30d, 30d+)</li>
+                <li>Multi-axis filtering for every workflow</li>
+              </ul>
+            </div>
+            <div class="feat-visual card-style">
+              <div class="fv-title">Patient Overview</div>
+              <div class="fv-row"><span class="fv-label">Total</span><span class="fv-val">126</span></div>
+              <div class="fv-row"><span class="fv-label">Aging &gt; 30d</span><span class="fv-val crit">14</span></div>
+              <div class="fv-row"><span class="fv-label">Needs Attention</span><span class="fv-val warn">23</span></div>
+              <div class="fv-row"><span class="fv-label">On Track</span><span class="fv-val ok">89</span></div>
+              <div class="fv-bar-wrap">
+                <div class="fv-bar"><div class="fv-fill ok" style="width:70%"></div></div>
+                <div class="fv-bar"><div class="fv-fill warn" style="width:18%"></div></div>
+                <div class="fv-bar"><div class="fv-fill crit" style="width:11%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feat-row reverse">
+            <div class="feat-text">
+              <div class="feat-num">02</div>
+              <h3>Cross-Team Notifications</h3>
+              <p>Send structured, threaded notifications between Home Office, NCM, SP, and ISS. No more email chains or Teams messages that get lost. Every communication is logged, tracked, and tied to a patient.</p>
+              <ul>
+                <li>Priority levels: Routine, Urgent, Critical</li>
+                <li>Reply threads with full audit trail</li>
+                <li>Acknowledge and resolve workflows</li>
+              </ul>
+            </div>
+            <div class="feat-visual card-style">
+              <div class="notif-card">
+                <div class="notif-header">
+                  <span class="team-badge ho">Home Office</span>
+                  <span class="priority-badge urgent">Urgent</span>
+                </div>
+                <div class="notif-to">→ <span class="team-badge sp">SP</span></div>
+                <div class="notif-body">Patient R. Thompson approaching 30-day threshold. Please review substatus and update prior auth status.</div>
+                <div class="notif-footer">
+                  <button class="ack-btn">Acknowledge</button>
+                  <button class="reply-btn">Reply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feat-row">
+            <div class="feat-text">
+              <div class="feat-num">03</div>
+              <h3>Analytics &amp; Reporting</h3>
+              <p>Managers get a live dashboard with case distribution, team performance, notification volumes, and trend data — plus shareable one-time report links for stakeholders who don't need logins.</p>
+              <ul>
+                <li>Case volume by bucket, region, channel</li>
+                <li>Notification response time tracking</li>
+                <li>Shareable, expiring report URLs</li>
+              </ul>
+            </div>
+            <div class="feat-visual card-style">
+              <div class="analytics-mini">
+                <div class="kpi-row">
+                  <div class="kpi"><div class="kpi-val">126</div><div class="kpi-label">Total Cases</div></div>
+                  <div class="kpi"><div class="kpi-val amber">42</div><div class="kpi-label">Active SP</div></div>
+                  <div class="kpi"><div class="kpi-val teal">31</div><div class="kpi-label">NCM</div></div>
+                </div>
+                <div class="chart-bar-mini">
+                  <div class="cbm-bar" style="height:80%"><span>SP</span></div>
+                  <div class="cbm-bar" style="height:55%"><span>NCM</span></div>
+                  <div class="cbm-bar" style="height:35%"><span>ISS</span></div>
+                  <div class="cbm-bar" style="height:20%"><span>HO</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance -->
+    <section class="compliance">
+      <div class="inner compliance-inner">
+        <div class="comp-text">
+          <div class="section-label">Security &amp; Compliance</div>
+          <h2>Built for healthcare.<br/>Secure by design.</h2>
+          <p>HIPAA compliance isn't a checkbox — it's woven into every layer of Conduit. From encrypted data transport to session management, we've designed the system to meet the expectations of healthcare organizations.</p>
+        </div>
+        <div class="comp-grid">
+          <div class="comp-item">
+            <div class="comp-icon">🔒</div>
+            <div class="comp-title">Encrypted Transport</div>
+            <div class="comp-body">All data transmitted over TLS. No plain-text PHI in transit.</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon">⏱️</div>
+            <div class="comp-title">Session Timeout</div>
+            <div class="comp-body">Automatic 30-minute inactivity logout with 1-minute warning.</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon">📋</div>
+            <div class="comp-title">PHI Access Logging</div>
+            <div class="comp-body">Every patient record access is logged with user, team, and timestamp.</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon">🛡️</div>
+            <div class="comp-title">Security Headers</div>
+            <div class="comp-body">HSTS, CSP, X-Frame-Options, and more — applied at the application layer.</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon">🔑</div>
+            <div class="comp-title">Bcrypt Auth</div>
+            <div class="comp-body">Passwords hashed with bcrypt. No plain-text credentials stored.</div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon">🚦</div>
+            <div class="comp-title">Rate Limiting</div>
+            <div class="comp-body">Login and API rate limiting to block brute-force attempts.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="inner">
+        <h2>Ready to see it in action?</h2>
+        <p>We'll walk you through Conduit live — no sales pitch, just the product.</p>
+        <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="btn-primary">Request a Demo</a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main { padding-top: 68px; }
+
+  .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: radial-gradient(ellipse 900px 400px at 50% 0%, rgba(245,158,11,0.07) 0%, transparent 70%);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: var(--amber-dim);
+    border: 1px solid var(--amber-border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .amber { color: var(--amber); }
+
+  .sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--amber);
+    color: #07101E;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-ghost {
+    display: inline-block;
+    border: 1px solid var(--border-2);
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 10px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+  /* Mockup */
+  .mockup-section {
+    padding: 60px 0 80px;
+    border-top: 1px solid var(--border);
+  }
+
+  .browser {
+    background: var(--navy-3);
+    border: 1px solid var(--border-2);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  }
+
+  .browser-bar {
+    background: var(--navy-2);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dots { display: flex; gap: 6px; }
+  .dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--border-2); }
+  .dots span:first-child { background: #FF5F57; }
+  .dots span:nth-child(2) { background: #FFBD2E; }
+  .dots span:last-child { background: #28CA41; }
+
+  .url-pill {
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 14px;
+    font-size: 11px;
+    color: var(--faint);
+  }
+
+  .browser-body { padding: 0; }
+
+  .app-shell {
+    display: flex;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    background: var(--navy-2);
+    border-right: 1px solid var(--border);
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sb-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--amber);
+    padding: 8px 12px 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+
+  .sb-item {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sb-item.active { background: var(--amber-dim); color: var(--amber); }
+
+  .badge {
+    margin-left: auto;
+    background: var(--amber);
+    color: #07101E;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 10px;
+  }
+
+  .sb-spacer { flex: 1; }
+
+  .sb-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+  }
+
+  .sb-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--amber-dim);
+    color: var(--amber);
+    font-size: 9px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sb-uname { font-size: 11px; font-weight: 600; }
+  .sb-team  { font-size: 10px; color: var(--faint); }
+
+  /* Main area */
+  .main-area { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+  .toolbar {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    flex: 1;
+    background: var(--navy-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 11px;
+    color: var(--faint);
+  }
+
+  .filters { display: flex; gap: 6px; }
+
+  .filter-pill {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--faint);
+    cursor: pointer;
+  }
+  .filter-pill.active { border-color: var(--amber-border); background: var(--amber-dim); color: var(--amber); }
+
+  .table-wrap { overflow: auto; flex: 1; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--faint);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--navy-3);
+  }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:hover { background: rgba(255,255,255,0.03); }
+  tbody tr.highlighted { background: rgba(245,158,11,0.04); }
+  tbody td { padding: 9px 12px; }
+
+  .pt-name { font-weight: 600; }
+  .muted { color: var(--muted); }
+
+  .status {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
+  .status.sp  { background: rgba(99,102,241,0.15); color: #A5B4FC; border: 1px solid rgba(99,102,241,0.25); }
+  .status.ncm { background: rgba(20,184,166,0.1);  color: var(--teal);  border: 1px solid rgba(20,184,166,0.2); }
+  .status.iss { background: rgba(245,158,11,0.12); color: var(--amber); border: 1px solid rgba(245,158,11,0.25); }
+  .status.ho  { background: rgba(99,102,241,0.1);  color: #C4B5FD; border: 1px solid rgba(99,102,241,0.2); }
+
+  .aging {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
+  .aging.ok   { background: rgba(34,197,94,0.1);  color: #4ADE80; border: 1px solid rgba(34,197,94,0.2); }
+  .aging.warn { background: rgba(245,158,11,0.12); color: var(--amber); border: 1px solid rgba(245,158,11,0.25); }
+  .aging.crit { background: rgba(239,68,68,0.1);  color: #F87171; border: 1px solid rgba(239,68,68,0.2); }
+
+  .notify-btn {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-2);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .notify-btn:hover { border-color: var(--amber-border); color: var(--amber); }
+
+  .caption {
+    text-align: center;
+    font-size: 13px;
+    color: var(--faint);
+    margin-top: 20px;
+  }
+
+  /* Features */
+  .features {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+
+  .features h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+    margin-bottom: 72px;
+  }
+
+  .feature-rows { display: flex; flex-direction: column; gap: 80px; }
+
+  .feat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .feat-row.reverse { direction: rtl; }
+  .feat-row.reverse > * { direction: ltr; }
+
+  .feat-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+
+  .feat-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+  }
+
+  .feat-text p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .feat-text ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .feat-text li {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 20px;
+    position: relative;
+  }
+  .feat-text li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .feat-visual.card-style {
+    background: var(--navy-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  /* Feature visuals */
+  .fv-title { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 20px; color: var(--muted); }
+  .fv-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
+  .fv-label { color: var(--muted); }
+  .fv-val { font-weight: 700; }
+  .fv-val.crit { color: #F87171; }
+  .fv-val.warn { color: var(--amber); }
+  .fv-val.ok   { color: #4ADE80; }
+
+  .fv-bar-wrap { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .fv-bar { height: 6px; background: var(--navy-3); border-radius: 3px; overflow: hidden; }
+  .fv-fill { height: 100%; border-radius: 3px; }
+  .fv-fill.ok   { background: #4ADE80; }
+  .fv-fill.warn { background: var(--amber); }
+  .fv-fill.crit { background: #F87171; }
+
+  /* Notif card visual */
+  .notif-card { background: var(--navy-3); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .notif-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .notif-to { font-size: 11px; color: var(--faint); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .notif-body { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+  .notif-footer { display: flex; gap: 8px; }
+
+  .team-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .team-badge.ho { background: rgba(99,102,241,0.15); color: #A5B4FC; border: 1px solid rgba(99,102,241,0.25); }
+  .team-badge.sp { background: rgba(20,184,166,0.1);  color: var(--teal); border: 1px solid rgba(20,184,166,0.2); }
+
+  .priority-badge.urgent { font-size: 9px; font-weight: 700; background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); padding: 2px 8px; border-radius: 20px; }
+
+  .ack-btn, .reply-btn {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-2);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .ack-btn { background: var(--amber-dim); border-color: var(--amber-border); color: var(--amber); }
+
+  /* Analytics mini */
+  .analytics-mini { padding: 4px; }
+  .kpi-row { display: flex; gap: 12px; margin-bottom: 20px; }
+  .kpi { flex: 1; background: var(--navy-3); border: 1px solid var(--border); border-radius: 10px; padding: 12px; text-align: center; }
+  .kpi-val { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+  .kpi-val.amber { color: var(--amber); }
+  .kpi-val.teal  { color: var(--teal); }
+  .kpi-label { font-size: 9px; color: var(--faint); }
+
+  .chart-bar-mini { display: flex; gap: 10px; align-items: flex-end; height: 80px; }
+  .cbm-bar {
+    flex: 1;
+    background: linear-gradient(to top, var(--amber), var(--amber-light));
+    border-radius: 4px 4px 0 0;
+    opacity: 0.7;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 4px;
+  }
+  .cbm-bar:nth-child(2) { background: linear-gradient(to top, var(--teal), rgba(20,184,166,0.6)); }
+  .cbm-bar:nth-child(3) { background: linear-gradient(to top, rgba(99,102,241,1), rgba(99,102,241,0.6)); }
+  .cbm-bar:nth-child(4) { background: linear-gradient(to top, rgba(148,163,184,0.7), rgba(148,163,184,0.4)); }
+  .cbm-bar span { font-size: 8px; color: rgba(255,255,255,0.7); font-weight: 600; }
+
+  /* Compliance */
+  .compliance {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+    background: var(--navy-2);
+  }
+
+  .compliance-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .comp-text h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+    margin: 16px 0 20px;
+  }
+
+  .comp-text p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .comp-item {
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .comp-icon { font-size: 20px; margin-bottom: 10px; }
+  .comp-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .comp-body { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* CTA */
+  .cta-band {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+    background: radial-gradient(ellipse 800px 300px at 50% 0%, rgba(245,158,11,0.08) 0%, transparent 70%);
+    text-align: center;
+  }
+
+  .cta-band h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 16px; }
+  .cta-band p  { font-size: 16px; color: var(--muted); max-width: 400px; margin: 0 auto 36px; line-height: 1.7; }
+
+  /* Responsive */
+  @media (max-width: 820px) {
+    .feat-row { grid-template-columns: 1fr; gap: 32px; }
+    .feat-row.reverse { direction: ltr; }
+    .compliance-inner { grid-template-columns: 1fr; }
+    .comp-grid { grid-template-columns: 1fr; }
+    .app-shell { height: 300px; }
+    .sidebar { width: 140px; }
+  }
+
+  @media (max-width: 600px) {
+    .sidebar { display: none; }
+  }
+</style>

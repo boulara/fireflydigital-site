@@ -1,0 +1,127 @@
+---
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="inner">
+    <div class="top">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="17" stroke="#F59E0B" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="18" cy="18" r="7" fill="#F59E0B" opacity="0.9"/>
+          <circle cx="18" cy="18" r="4" fill="#FCD34D"/>
+          <line x1="18" y1="2"  x2="18" y2="8"  stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <line x1="18" y1="28" x2="18" y2="34" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <line x1="2"  y1="18" x2="8"  y2="18" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <line x1="28" y1="18" x2="34" y2="18" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <div>
+          <div class="brand-name"><span class="accent">F</span>irefly <span class="accent">D</span>igital</div>
+          <div class="brand-sub">Software &amp; Analytics · New Hampshire</div>
+        </div>
+      </div>
+      <p class="tagline">Building intelligent software for the teams that help patients get the care they need.</p>
+    </div>
+
+    <div class="mid">
+      <div class="col">
+        <div class="col-head">Company</div>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="col">
+        <div class="col-head">Product</div>
+        <a href="/product">Conduit</a>
+        <a href="https://conduit.fireflydigital.biz" target="_blank" rel="noopener">Launch App ↗</a>
+      </div>
+      <div class="col">
+        <div class="col-head">Get in Touch</div>
+        <a href="mailto:nicholas.milaro@outlook.com">nicholas.milaro@outlook.com</a>
+        <a href="mailto:boulara@me.com">boulara@me.com</a>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <span>© {year} Firefly Digital LLC · New Hampshire, USA</span>
+      <span class="hipaa">HIPAA-Compliant Software</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--navy-2);
+    border-top: 1px solid var(--border);
+    margin-top: 120px;
+  }
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 32px 32px;
+  }
+
+  .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .mark  { width: 32px; height: 32px; filter: drop-shadow(0 0 6px rgba(245,158,11,0.4)); }
+  .brand-name { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
+  .brand-sub  { font-size: 11px; color: var(--faint); margin-top: 2px; }
+  .accent     { color: var(--amber); }
+
+  .tagline {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 380px;
+    line-height: 1.7;
+    text-align: right;
+  }
+
+  .mid {
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+
+  .col { display: flex; flex-direction: column; gap: 10px; }
+  .col-head { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
+  .col a { font-size: 13px; color: var(--muted); transition: color 0.2s; }
+  .col a:hover { color: var(--amber); }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--faint);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hipaa {
+    background: rgba(20,184,166,0.1);
+    border: 1px solid rgba(20,184,166,0.2);
+    color: var(--teal);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 640px) {
+    .tagline { text-align: left; }
+    .mid { gap: 32px; }
+  }
+</style>

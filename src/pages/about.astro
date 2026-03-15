@@ -1,0 +1,358 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About — Firefly Digital" description="Firefly Digital is a New Hampshire software and analytics company building intelligent tools for healthcare teams.">
+  <Nav current="/about" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="inner">
+        <div class="eyebrow">Our Story</div>
+        <h1>Built by operators,<br/>for operators.</h1>
+        <p class="sub">We spent years watching healthcare teams drown in spreadsheets, sticky notes, and disconnected workflows. So we built the tool we always wished existed.</p>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="mission">
+      <div class="inner two-col">
+        <div class="text">
+          <h2>The problem we're solving</h2>
+          <p>Specialty pharmacy and care coordination teams are doing heroic work with outdated tools. Patient cases fall through the cracks. Teams can't communicate across departments in real time. Managers have no visibility into what's actually happening on the floor.</p>
+          <p>The result? Delays in care, frustrated staff, and outcomes that could have been better.</p>
+          <p>We believe software should remove friction — not add to it. Conduit was built from the ground up to fit the way care teams actually work, not to force them into a rigid SaaS mold.</p>
+        </div>
+        <div class="values">
+          <div class="value-card">
+            <div class="v-icon">🎯</div>
+            <div class="v-title">Purpose-built</div>
+            <div class="v-body">Every feature in Conduit exists because a real care team needed it — not because it looked good in a product roadmap.</div>
+          </div>
+          <div class="value-card">
+            <div class="v-icon">🔐</div>
+            <div class="v-title">HIPAA-first</div>
+            <div class="v-body">Security and privacy are foundational constraints, not afterthoughts. We design with compliance in mind from day one.</div>
+          </div>
+          <div class="value-card">
+            <div class="v-icon">⚡</div>
+            <div class="v-title">Lean and fast</div>
+            <div class="v-body">We move quickly, ship often, and stay close to our customers. No bloated committee. No 18-month roadmaps.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team">
+      <div class="inner">
+        <div class="section-label">The Team</div>
+        <h2>Small team. Big impact.</h2>
+        <p class="section-sub">We're a tight-knit group based in New Hampshire with deep roots in healthcare operations and software engineering.</p>
+
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="avatar">NM</div>
+            <div class="tm-name">Nick Milaro</div>
+            <div class="tm-role">Co-founder · Product &amp; Sales</div>
+            <p class="tm-bio">Nick spent over a decade in specialty pharmacy and hub operations, managing care coordination teams across multiple regions. He brings firsthand knowledge of what breaks down in patient workflows and a clear vision for what better looks like.</p>
+            <a href="mailto:nicholas.milaro@outlook.com" class="tm-email">nicholas.milaro@outlook.com</a>
+          </div>
+
+          <div class="team-card">
+            <div class="avatar">RB</div>
+            <div class="tm-name">Rick Boulanger</div>
+            <div class="tm-role">Co-founder · Engineering</div>
+            <p class="tm-bio">Rick is a software engineer with a background in building data-intensive applications. He's obsessed with clean architecture, performance, and making complex systems feel simple to the people who use them every day.</p>
+            <a href="mailto:boulara@me.com" class="tm-email">boulara@me.com</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location">
+      <div class="inner location-inner">
+        <div class="loc-text">
+          <div class="section-label">Where We Are</div>
+          <h2>Proudly New Hampshire.</h2>
+          <p>Firefly Digital LLC is incorporated and operated in New Hampshire. We're not a venture-backed startup chasing hockey sticks — we're operators who care deeply about the work and the people we serve.</p>
+          <p>We build quietly, ship reliably, and stand behind everything we put in front of a customer.</p>
+        </div>
+        <div class="nh-card">
+          <div class="nh-icon">🏔️</div>
+          <div class="nh-name">New Hampshire</div>
+          <div class="nh-sub">Live Free or Die</div>
+          <div class="nh-detail">Founded 2024 · LLC</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="inner">
+        <h2>Want to learn more?</h2>
+        <p>We love talking to care coordination teams. Whether you're curious about Conduit or just want to share your workflow pain — reach out.</p>
+        <a href="mailto:nicholas.milaro@outlook.com?subject=Hello from the website" class="btn-primary">Get in Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main { padding-top: 68px; }
+
+  .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: radial-gradient(ellipse 900px 400px at 50% 0%, rgba(245,158,11,0.07) 0%, transparent 70%);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: var(--amber-dim);
+    border: 1px solid var(--amber-border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #F1F5F9 40%, var(--amber-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Mission */
+  .mission {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .text h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+  }
+
+  .text p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .values { display: flex; flex-direction: column; gap: 16px; }
+
+  .value-card {
+    background: var(--navy-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+
+  .v-icon { font-size: 22px; margin-bottom: 10px; }
+  .v-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .v-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* Team */
+  .team {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+    background: var(--navy-2);
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+
+  .team h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .team-card {
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--amber-dim);
+    border: 1.5px solid var(--amber-border);
+    color: var(--amber);
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .tm-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .tm-role { font-size: 12px; color: var(--muted); margin-bottom: 16px; letter-spacing: 0.3px; }
+  .tm-bio  { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
+
+  .tm-email {
+    font-size: 12px;
+    color: var(--amber);
+    border-bottom: 1px solid var(--amber-border);
+    padding-bottom: 1px;
+    transition: opacity 0.2s;
+  }
+  .tm-email:hover { opacity: 0.8; }
+
+  /* Location */
+  .location {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .location-inner {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .loc-text { flex: 1; }
+
+  .loc-text h2 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-bottom: 20px;
+    margin-top: 16px;
+  }
+
+  .loc-text p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .nh-card {
+    flex-shrink: 0;
+    width: 220px;
+    background: var(--navy-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .nh-icon { font-size: 48px; margin-bottom: 16px; }
+  .nh-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .nh-sub  { font-size: 12px; color: var(--faint); font-style: italic; margin-bottom: 16px; }
+  .nh-detail {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--amber);
+    background: var(--amber-dim);
+    border: 1px solid var(--amber-border);
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  /* CTA band */
+  .cta-band {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+    background: radial-gradient(ellipse 800px 300px at 50% 0%, rgba(245,158,11,0.08) 0%, transparent 70%);
+    text-align: center;
+  }
+
+  .cta-band h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 16px; }
+  .cta-band p  { font-size: 16px; color: var(--muted); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--amber);
+    color: #07101E;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Responsive */
+  @media (max-width: 820px) {
+    .two-col { grid-template-columns: 1fr; gap: 48px; }
+    .team-grid { grid-template-columns: 1fr; }
+    .location-inner { flex-direction: column; gap: 40px; }
+    .nh-card { width: 100%; }
+  }
+</style>

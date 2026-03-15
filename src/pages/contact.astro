@@ -1,0 +1,355 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact — Firefly Digital" description="Get in touch with the Firefly Digital team to request a Conduit demo or ask about our services.">
+  <Nav current="/contact" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="inner">
+        <div class="eyebrow">Contact</div>
+        <h1>Let's talk.</h1>
+        <p class="sub">We're a small team that moves fast. Reach out directly — no ticketing system, no SDR, just us.</p>
+      </div>
+    </section>
+
+    <!-- Contact cards -->
+    <section class="contacts">
+      <div class="inner">
+        <div class="cards">
+
+          <div class="contact-card">
+            <div class="avatar">NM</div>
+            <div class="name">Nick Milaro</div>
+            <div class="role">Co-founder · Product &amp; Sales</div>
+            <p class="bio">Nick leads product vision and customer relationships. He's your first call for demo requests, partnership conversations, or questions about how Conduit fits your team's workflow.</p>
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <a href="mailto:nicholas.milaro@outlook.com" class="contact-link">nicholas.milaro@outlook.com</a>
+            </div>
+            <div class="tags">
+              <span class="tag">Product demos</span>
+              <span class="tag">Partnerships</span>
+              <span class="tag">Pricing</span>
+              <span class="tag">Onboarding</span>
+            </div>
+            <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="cta-btn">Request a Demo</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="avatar">RB</div>
+            <div class="name">Rick Boulanger</div>
+            <div class="role">Co-founder · Engineering</div>
+            <p class="bio">Rick handles everything technical — integrations, security reviews, implementation support, and API questions. Reach out if you have technical requirements or want to dig into how the platform is built.</p>
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <a href="mailto:boulara@me.com" class="contact-link">boulara@me.com</a>
+            </div>
+            <div class="tags">
+              <span class="tag">Technical questions</span>
+              <span class="tag">Security & compliance</span>
+              <span class="tag">Integrations</span>
+            </div>
+            <a href="mailto:boulara@me.com?subject=Conduit Technical Inquiry" class="cta-btn secondary">Send a Message</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="inner">
+        <div class="section-label">Common Questions</div>
+        <h2>Quick answers</h2>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">Is Conduit HIPAA compliant?</div>
+            <div class="faq-a">Yes. Conduit is built with HIPAA compliance as a foundational requirement — not an add-on. We can discuss BAA terms directly.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How long does onboarding take?</div>
+            <div class="faq-a">Typically a few days to a week. We handle configuration and data setup — your team just needs to show up trained.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can Conduit connect to our EHR?</div>
+            <div class="faq-a">We have integration capabilities and can discuss your specific EHR or data source. Reach out to Rick for technical details.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What team sizes does Conduit support?</div>
+            <div class="faq-a">We work with teams of all sizes — from 5-person care coordination groups to multi-region enterprise hubs.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Is there a free trial?</div>
+            <div class="faq-a">We offer live guided demos rather than self-serve trials. This lets us make sure the product fits your workflow before you commit.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Where is Conduit hosted?</div>
+            <div class="faq-a">Conduit runs on Railway's cloud infrastructure with encrypted storage. Data does not leave US-based servers.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="cta-band">
+      <div class="inner">
+        <div class="cta-glow"></div>
+        <h2>Ready to see Conduit?</h2>
+        <p>15 minutes is all it takes. We'll show you exactly how your team would use it.</p>
+        <a href="mailto:nicholas.milaro@outlook.com?subject=Conduit Demo Request" class="btn-primary">Book a Demo with Nick</a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main { padding-top: 68px; }
+
+  .inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 0 70px;
+    text-align: center;
+    background: radial-gradient(ellipse 800px 350px at 50% 0%, rgba(245,158,11,0.07) 0%, transparent 70%);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: var(--amber-dim);
+    border: 1px solid var(--amber-border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 7vw, 72px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #F1F5F9 40%, var(--amber-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Contacts */
+  .contacts {
+    padding: 80px 0 100px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .contact-card {
+    background: var(--navy-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: border-color 0.2s;
+  }
+  .contact-card:hover { border-color: var(--border-2); }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--amber-dim);
+    border: 1.5px solid var(--amber-border);
+    color: var(--amber);
+    font-size: 17px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .role { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+
+  .bio {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--faint);
+    min-width: 40px;
+  }
+
+  .contact-link {
+    font-size: 13px;
+    color: var(--amber);
+    transition: opacity 0.2s;
+  }
+  .contact-link:hover { opacity: 0.8; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    color: var(--faint);
+  }
+
+  .cta-btn {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    background: var(--amber);
+    color: #07101E;
+    transition: opacity 0.2s;
+    margin-top: auto;
+  }
+  .cta-btn:hover { opacity: 0.88; }
+  .cta-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--border-2);
+    color: var(--muted);
+  }
+  .cta-btn.secondary:hover { border-color: rgba(255,255,255,0.25); color: var(--text); opacity: 1; }
+
+  /* FAQ */
+  .faq {
+    padding: 80px 0 100px;
+    border-top: 1px solid var(--border);
+    background: var(--navy-2);
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+
+  .faq h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    margin-bottom: 48px;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .faq-item {
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .faq-q {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .faq-a {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* CTA band */
+  .cta-band {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+    background: radial-gradient(ellipse 700px 300px at 50% 0%, rgba(245,158,11,0.09) 0%, transparent 70%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-band h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 16px; }
+  .cta-band p  { font-size: 16px; color: var(--muted); max-width: 400px; margin: 0 auto 36px; line-height: 1.7; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--amber);
+    color: #07101E;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 15px 36px;
+    border-radius: 10px;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .cards { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+  }
+</style>
